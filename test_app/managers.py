@@ -25,9 +25,9 @@ class DynamicModelManager(models.Manager):
 		}
 		if queryset:
 			serialized["model_header"] = [{
-				"verbose_name": field.verbose_name,
-				"name": field.name,
-				"type": field_to_type(field),
+				"verbose_name": u"%s" % (field.verbose_name, ),
+				"name": u"%s" % (field.name, ),
+				"type": u"%s" % (field_to_type(field), ),
 			} for field in queryset[0]._meta.fields]
 
 			serialized["model_body"] = []
@@ -38,8 +38,8 @@ class DynamicModelManager(models.Manager):
 				}
 				for field in query._meta.fields:
 					dictionary["fields"].append({
-						"name": field.name,
-						"value": str(getattr(query, field.attname))
+						"name": u"%s" % (field.name, ),
+						"value": u"%s" % (getattr(query, field.attname), )
 					})
 				serialized["model_body"].append(dictionary)
 		return serialized
