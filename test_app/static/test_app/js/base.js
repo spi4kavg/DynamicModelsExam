@@ -102,7 +102,7 @@ $(document).ready(function () {
 				}
 				break;
 			case "char":
-				if (!/^[a-zA-Zа-яА-Я]+$/.test(value)) {
+				if (!/^[\wа-яА-Я\s0-9]+$/.test(value)) {
 					alert("Это поле должно быть заполнено только символами");
 					error = false;
 				}
