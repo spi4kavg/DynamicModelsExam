@@ -1,0 +1,27 @@
+{% load staticfiles dynamic %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="stylesheet" href="{% static 'test_app/js/jquery-ui-1.11.3.custom/jquery-ui.css' %}"/>
+		<link rel="stylesheet" href="{% static 'test_app/css/base.css' %}"/>
+		<script src="{% static 'test_app/js/jquery-2.1.1.min.js' %}"></script>
+		<script src="{% static 'test_app/js/jquery-ui-1.11.3.custom/jquery-ui.min.js' %}"></script>
+		<script src="{% static 'test_app/js/base.js' %}"></script>
+	</head>
+	<body>
+		<nav>
+			{% dynamic_nav %}
+		</nav>
+		<section>
+			{% csrf_token %}
+			<h1>
+				{% block header %}{% endblock %}
+			</h1>
+			<div id="content-block"></div>
+		</section>
+		<footer>
+			&copy; Тестовое задание
+		</footer>
+	</body>
+</html>

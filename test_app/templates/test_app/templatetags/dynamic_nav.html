@@ -1,0 +1,7 @@
+{% if obj %}
+	<ul>
+		{% for row, cfg in obj.items %}
+			<li><a href="{% url 'dynamic_models' row %}">{{ cfg.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% endif %}

@@ -1,0 +1,44 @@
+.hide {
+	display: none;
+}
+:focus {
+	outline: 0;
+}
+nav {
+	width: 30%;
+	min-width: 100px;
+	float: left;
+}
+
+section {
+	width: 70%;
+	min-width: 500px;
+	float: left;
+}
+section:after {
+	clear: both;
+}
+
+section #editable-table input,
+section #editable-table textarea {
+	border: 0px solid transparent;
+	background: transparent;
+	width: 98%;
+}
+
+section #editable-table input:focus,
+section #editable-table textarea:focus {
+	border: 2px inset whiteSmoke;
+}
+
+section #editable-table th {
+	font-weight: normal;
+	text-align: left;
+}
+
+section #editable-table,
+section #editable-table th,
+section #editable-table td {
+	border: 1px solid #000;
+	padding: 3px;
+}
