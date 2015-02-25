@@ -27,8 +27,8 @@ class DynamicModelConstructor(object):
 	def create(self, model_name, model_cfg):
 		attrs = self.get_fields(model_cfg)
 		attrs.update(Meta=type('Meta', (), {
-			'verbose_name': u'{}'.format(model_cfg.get('title')),
-			'verbose_name_plural': u'{}'.format(model_cfg.get('title'))
+			'verbose_name': u'%s' % model_cfg.get('title'),
+			'verbose_name_plural': u'%s' % model_cfg.get('title')
 		}))
 		self.models[model_name] = type(model_name, (models.Model,), attrs)
 
@@ -36,7 +36,7 @@ class DynamicModelConstructor(object):
 		fields = {
 			'id': models.AutoField(primary_key=True),
 			'__module__': self.__module__,
-			'__unicode__': lambda self: u'{}'.format(model_cfg.get("title")),
+			'__unicode__': lambda self: u'%s' % model_cfg.get("title"),
 			'objects': DynamicModelManager(),
 		}
 		for field in model_cfg.get('fields', {}):

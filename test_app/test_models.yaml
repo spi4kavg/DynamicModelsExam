@@ -1,0 +1,20 @@
+users1:
+    title: Пользователи
+    fields:
+        - {id: name, title: Имя, type: char}
+        - {id: paycheck, title: Зарплата, type: int}
+        - {id: date_joined, title: Дата поступления на работу, type: date}
+
+rooms1:
+    title: Комнаты
+    fields:
+        - {id: department, title: Отдел, type: char}
+        - {id: spots, title: Вместимость, type: int}
+
+
+testmodel:
+    title: ТестоваяМодель
+    fields:
+        - {id: testcharfield, title: ТестовоеСимвольноеПоле, type: char}
+        - {id: testdatefield, title: ТестовоеПолеДаты, type: date}
+        - {id: testintfield, title: ТестовоеЧисловоеПоле, type: int}
