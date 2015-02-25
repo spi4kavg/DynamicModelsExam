@@ -97,7 +97,7 @@ class ExamModelTest(TestCase):
 		"""
 			tests model name
 		"""
-		self.assertEqual(self.model._meta.verbose_name, 'ТестоваяМодель')
+		self.assertEqual(self.model._meta.verbose_name, u'ТестоваяМодель')
 
 
 class ExamEditTest(TestCase):
